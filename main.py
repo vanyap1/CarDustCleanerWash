@@ -21,20 +21,14 @@ from kivy.uix.scatter import Scatter
 from kivy.properties import NumericProperty
 #from kivy.properties import BoundedNumericProperty
 from kivy.properties import StringProperty
-
-#import custom_fun
 import io , os, re, smbus # , i2c , psutil
-#from kivy.uix.videoplayer import VideoPlayer
-#from kivy_garden import graph
-#import configparser
-#import struct
 from kivy.core.window import Window
 from kivy.animation import Animation
 #from math import sin
 from kivy_garden.graph import Graph, MeshLinePlot, LinePlot, SmoothLinePlot
 from kivy.factory import Factory
 
-releaseDate = "30.06.2024"
+releaseDate = "30.04.2025"
 
 
 Builder.load_file("kv/buttons_group.kv")
