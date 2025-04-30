@@ -974,6 +974,7 @@ class Dashboard(FloatLayout):
     def bus_write(self):
         if config['relay_board1']['board_ver'] == "pf575c":
             try:
+                pass
                 bus.write_byte_data(0x27, io_status, 0xff)
             except:
                 time.sleep(.1)
