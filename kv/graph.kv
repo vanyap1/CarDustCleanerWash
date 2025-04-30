@@ -1,0 +1,40 @@
+#:import MeshLinePlot kivy_garden.graph.MeshLinePlot
+#:import MeshLinePlot kivy_garden.graph.LinePlot
+#:import MeshLinePlot kivy_garden.graph.SmoothLinePlot
+<SetGraph>:
+    canvas:
+        Color:
+            hsv: 0, 0, .5
+        Rectangle:
+            size: self.size
+        BorderImage:
+            source: 'images/shadow32.png'
+            border: (30,30,36,36)
+            size:(self.width+56, self.height+56)
+            pos: (-28,-28)
+
+    BoxLayout:
+        size: root.size
+        Graph:
+            id: graph_test
+            plot: MeshLinePlot
+            background_color: (.2, 0.2, 0.2, .6)
+            #size_hint: [.5, .5]
+            #pos: [10, 100]
+            ylabel: "mBar"
+            xlabel: "Seconds"
+            #y_ticks_minor: -10
+            y_ticks_major: 100
+            x_ticks_minor: 5
+            x_ticks_major: 5
+
+            y_grid_label: True
+            x_grid_label: True
+            padding: 1
+            x_grid: True
+            y_grid: True
+            ymin: -50
+            ymax: 700
+            xmin: 0
+            xmax: 100
+

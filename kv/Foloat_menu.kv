@@ -1,0 +1,58 @@
+#:kivy 1.0
+
+<Float_menu>:
+
+    canvas:
+
+        Rectangle:
+
+            source: 'images/bg_3.png'
+            size: self.size
+        BorderImage:
+            source: 'images/shadow32.png'
+            border: (30,30,36,36)
+            size:(self.width+56, self.height+56)
+            pos: (-28,-28)
+
+    BoxLayout:
+        size: root.size
+
+        orientation: 'vertical'
+        Label:
+
+            id: debug_lbl
+            font_size: 24
+            text:
+            text_size: (root.width, None)
+        Label:
+            id: debug_lbl2
+            font_size: 24
+            color: [0/255, 255/255, 0/255, 1]
+            text: "0"
+            text_size: (root.width, None)
+        Label:
+            text: 'x,y = ' + str(round(root.x)) + ',' + str(round(root.y))
+            text_size: (root.width, None)
+
+        BoxLayout:
+        #orientation: 'horisontal'
+
+            Button:
+                #pos: [150, 1]
+                size: [60, 40]
+                size_hint: None, None
+                text: "RST"
+                on_release: root.debug_function_set("cmd3")
+            Button:
+                #pos: [150, 1]
+                size: [60, 40]
+                size_hint: None, None
+                text: "RUN"
+                on_release: root.run_seq("seq1")
+
+
+
+
+
+
+

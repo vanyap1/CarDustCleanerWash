@@ -1,0 +1,293 @@
+<Meas_lbl_group>:
+    FloatLayout:
+    #Working state
+        #IP and vercion section
+        Label:
+            font_size: 24
+            markup: True
+            text: root.IPaddress
+            pos: 750, 920
+            size_hint: None, None
+            size: 216, 149
+        #System update info
+        Label:
+            font_size: 24
+            markup: True
+            text: root.sysUpdteInfo
+            pos: 60, 920
+            size_hint: None, None
+            size: 216, 149
+
+        Button:
+            text: ""
+            pos: 1100, (1024-123)
+            size_hint: None, None
+            size: 100, 65
+            background_normal: root.RunstateIcon
+            background_down: root.RunstateIcon
+
+    #Water Level
+        Button:
+            text: ""
+            pos: 430, (1024-123)
+            size_hint: None, None
+            size: 90, 65
+            background_normal: 'images/tank.png'
+            background_down: 'images/tank.png'
+        Label:
+            font_size: 30
+            markup: True
+            text: root.WaterLevel
+            pos: 368, (1024-163)
+            size_hint: None, None
+            size: 216, 149
+
+    #output water flow
+        Button:
+            text: ""
+            pos: 539, (1024-123)
+            size_hint: None, None
+            size: 90, 65
+            background_normal: 'images/water_flow_out_grn_1.png'
+            background_down: 'images/water_flow_out_grn_1.png'
+        Label:
+            font_size: 24
+            markup: True
+            text: root.OutputWaterTemp
+            pos: 475, (1024-163)
+            size_hint: None, None
+            size: 216, 149
+
+    #Input water flow
+        Button:
+            text: ""
+            pos: 648, (1024-123)
+            size_hint: None, None
+            size: 90, 65
+            background_normal: 'images/water_flow_in_red_1.png'
+            background_down: 'images/water_flow_in_red_1.png'
+        Label:
+            font_size: 24
+            markup: True
+            text: root.InputWaterTemp
+            pos: 584, (1024-163)
+            size_hint: None, None
+            size: 216, 149
+    #Water temperature button
+        Button:
+            text: ""
+            font_size: 24
+            markup: True
+            pos: 758, (1024-123)
+            size_hint: None, None
+            size: 90, 65
+            text: root.WaterTempSetPoint
+            background_normal: 'images/water_flow_out_setup.png'
+            background_down: 'images/water_flow_out_setup.png'
+            on_press: root.WaterTempAjust()
+
+        #Water heater 3kW icon
+        Image:
+            pos: 850, (1024-123)
+            size_hint: None, None
+            size: 90, 65
+            source: root.Heater1_icon
+        #Water heater 6kW icon
+        Image:
+            pos: 920, (1024-123)
+            size_hint: None, None
+            size: 90, 65
+            source: root.Heater2_icon
+
+
+
+
+
+
+    #Result mBar
+        Button:
+            text: ""
+            pos: 66, 274
+            size_hint: None, None
+            size: 177, 149
+            background_normal: 'images/meas_lbl_l.png'
+            background_down: 'images/meas_lbl_l.png'
+        Label:
+            font_size: 24
+            markup: True
+            text: "[color=000000]Результат\n    мБар[/color]"
+            pos: 45, 314
+            size_hint: None, None
+            size: 216, 149
+        Label:
+            font_size: 44
+            markup: True
+            font_name: "fonts/hemi_head_bd_it.ttf"
+            text: root.ResultPressure
+            pos: 45, 244
+            size_hint: None, None
+            size: 216, 149
+
+    #RUN time
+        Button:
+            text: ""
+            pos: 253, 274
+            size_hint: None, None
+            size: 177, 149
+            background_normal: 'images/meas_lbl_l.png'
+            background_down: 'images/meas_lbl_l.png'
+        Label:
+            font_size: 24
+            markup: True
+            text: "[color=000000]Таймер[/color]"
+            pos: 235, 314
+            size_hint: None, None
+            size: 216, 149
+        Label:
+            font_size: 36
+            markup: True
+            font_name: "fonts/hemi_head_bd_it.ttf"
+            text: root.run_time
+            pos: 235, 244
+            size_hint: None, None
+            size: 216, 149
+    #AIR Heater
+        Button:
+            text: ""
+            pos: 440, 274
+            size_hint: None, None
+            size: 177, 149
+            background_normal: 'images/meas_lbl_l.png'
+            background_down: 'images/meas_lbl_l.png'
+        Label:
+            font_size: 24
+            markup: True
+            text: "[color=000000]Підігрів \nповітря[/color]"
+            pos: 450, 314
+            size_hint: None, None
+            size: 216, 149
+
+        Button:
+            font_size: 22
+            markup: True
+            text: root.AirTempSetPointLBL
+            pos: 450, 356
+            size_hint: None, None
+            size: 56, 56
+            background_normal: root.heater_en_led
+            background_down: root.heater_en_led
+            on_press: root.temp_ajust()
+
+        ToggleButton:
+            id: toggle_btn
+            text: ""
+            pos: 460, 280
+            size_hint: None, None
+            size: 140, 70
+            background_normal: root.heater_button_on
+            background_down: root.heater_button_off
+            on_press: root.io_swich("toggle")
+
+
+
+
+    #Water press Bar / Second row
+        Button:
+            text: ""
+            pos: 60, 77
+            size_hint: None, None
+            size: 216, 149
+            background_normal: 'images/meas_lbl.png'
+            background_down: 'images/meas_lbl.png'
+        Label:
+            font_size: 24
+
+            markup: True
+            text: "[color=000000]Датчик тиску 1[/color]"
+            pos: 60, 117
+            size_hint: None, None
+            size: 216, 149
+        Label:
+            font_size: 44
+            id: water_press1
+            markup: True
+            font_name: "fonts/hemi_head_bd_it.ttf"
+            text: root.InputWaterPressure
+            pos: 60, 50
+            size_hint: None, None
+            size: 216, 149
+
+    #Water press Bar / Second row
+        Button:
+            text: ""
+            pos: 291, 77
+            size_hint: None, None
+            size: 216, 149
+            background_normal: 'images/meas_lbl.png'
+            background_down: 'images/meas_lbl.png'
+        Label:
+            font_size: 24
+            markup: True
+            text: "[color=000000]Датчик тиску 2[/color]"
+            pos: 291, 117
+            size_hint: None, None
+            size: 216, 149
+        Label:
+            font_size: 44
+            markup: True
+            font_name: "fonts/hemi_head_bd_it.ttf"
+            text: root.OutputWaterPressure
+            pos: 291, 50
+            size_hint: None, None
+            size: 216, 149
+
+
+    #Air press mBar / Second row
+        Button:
+            text: ""
+            pos: 523, 77
+            size_hint: None, None
+            size: 216, 149
+            background_normal: 'images/meas_lbl.png'
+            background_down: 'images/meas_lbl.png'
+        Label:
+            font_size: 24
+            markup: True
+            text: "[color=000000]Датчик тиску 3[/color]"
+            pos: 523, 117
+            size_hint: None, None
+            size: 216, 149
+        Label:
+            font_size: 44
+            #id: water_press
+            markup: True
+            font_name: "fonts/hemi_head_bd_it.ttf"
+            text: root.OutputWaterPressure2
+            pos: 523, 50
+            size_hint: None, None
+            size: 216, 149
+
+    #Air temp / Second row
+        Button:
+            text: ""
+            pos: 754, 77
+            size_hint: None, None
+            size: 216, 149
+            background_normal: 'images/meas_lbl.png'
+            background_down: 'images/meas_lbl.png'
+        Label:
+            font_size: 20
+            markup: True
+            text: "[color=000000]Температура\nпродувки °C[/color]"
+            pos: 754, 117
+            size_hint: None, None
+            size: 216, 149
+        Label:
+            font_size: 44
+            markup: True
+            font_name: "fonts/hemi_head_bd_it.ttf"
+            text: root.AirTemperature
+            pos: 754, 50
+            size_hint: None, None
+            size: 216, 149
+        

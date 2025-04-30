@@ -1,0 +1,4 @@
+nslookup localhost
+#!/bin/bash
+myip=$('hostname -I')
+echo $myip

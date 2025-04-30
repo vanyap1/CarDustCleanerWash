@@ -1,0 +1,6 @@
+start_fan:1
+delay:30
+stop_fan:1
+cleanup:1
+end
+end of program

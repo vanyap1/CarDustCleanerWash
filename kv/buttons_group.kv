@@ -1,0 +1,43 @@
+<btns_group>:
+
+    canvas:
+        Color:
+            hsv: 0, 1, .5
+        Rectangle:
+            size: self.size
+        BorderImage:
+            source: 'images/shadow32.png'
+            border: (30,30,36,36)
+            size:(self.width+56, self.height+56)
+            pos: (-28,-28)
+    size_hint: None, None
+
+
+    BoxLayout:
+        size: root.size
+        orientation: 'vertical'
+        Button:
+            text: "on"
+            on_press: root.fn("on")
+        Button:
+            text: "off"
+            on_press: root.fn("off")
+        Button:
+            text: "toggle"
+            on_press: root.fn("io_swich")
+        Switch:
+            id: my_switch
+            on_active: root.fn(str(self.active))
+        Label:
+            id: lbl_1_1
+            font_size: 16
+            text:
+        Label:
+            id: stuff_p
+            font_size: 16
+            text: "---"
+        Label:
+            halign: "center"
+            color: [0/255, 255/255, 0/255, 1]
+            text: 'x,y = ' + str(round(root.x)) + ',' + str(round(root.y))
+            text_size: (root.width, None)

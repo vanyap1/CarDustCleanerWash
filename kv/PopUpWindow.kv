@@ -1,0 +1,91 @@
+<PopUpWindow>:
+    FloatLayout:
+        size: root.size
+
+        Button:
+            text: "Обновити"
+            size_hint: None, None
+            size: 100, 40
+            pos_hint: {'center_x': 0.2, 'y': 0.1}
+            on_release: root.resultRefresh()
+
+        Button:
+            text: "Друкувати"
+            size_hint: None, None
+            size: 100, 40
+            pos_hint: {'center_x': 0.5, 'y': 0.1}
+            on_press:
+                root.popupVent()
+
+        Button:
+            text: "Вихід"
+            size_hint: None, None
+            size: 90, 40
+            pos_hint: {'center_x': 0.8, 'y': 0.1}
+            on_release: root.parent.parent.parent.dismiss()
+
+        Label:
+            id: pop_label
+            text: root.text
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+
+
+
+
+
+        # Pre pressure manual update block
+        Label:
+            text: "Корекція тиску передтестстування"
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+
+        TextInput:
+            id: preInput
+            multiline: False
+            text: str(root.pressPreCorrection)
+            size_hint: None, None
+            size: 50, 30
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        Button:
+            text: "-"
+            size_hint: None, None
+            size: 30, 30
+            pos_hint: {'center_x': 0.35, 'center_y': 0.5}
+            on_release: root.pressPreCorrection -=1
+
+        Button:
+            text: "+"
+            size_hint: None, None
+            size: 30, 30
+            pos_hint: {'center_x': 0.65, 'center_y': 0.5}
+            on_release: root.pressPreCorrection +=1
+
+        # Post pressure manual update block
+        Label:
+            text: "Корекція тиску після тестування"
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+
+        TextInput:
+            id: postInput
+            multiline: False
+            text: str(root.pressPostCorrection)
+            size_hint: None, None
+            size: 50, 30
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+
+        Button:
+            text: "-"
+            size_hint: None, None
+            size: 30, 30
+            pos_hint: {'center_x': 0.35, 'center_y': 0.3}
+            on_release: root.pressPostCorrection -=1
+
+        Button:
+            text: "+"
+            size_hint: None, None
+            size: 30, 30
+            pos_hint: {'center_x': 0.65, 'center_y': 0.3}
+            on_release: root.pressPostCorrection +=1

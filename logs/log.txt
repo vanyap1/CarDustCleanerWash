@@ -1,0 +1,21 @@
+printer ready 
+iprinter ready 
+iprinter ready 
+i23:16:05
+ printer ready 
+i
+08/19/22:08:22_23:16:58
+ printer ready 
+i
+19:08:2022_23:18:21
+ printer ready 
+i
+19/08/2022-23:18:49
+ printer ready 
+i
+19/08/2022-23:27:26
+ printer ready 
+i
+20/08/2022-07:54:44
+ printer ready 
+i

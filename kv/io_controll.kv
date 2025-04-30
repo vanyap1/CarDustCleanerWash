@@ -1,0 +1,94 @@
+#:kivy 1.0
+
+<IO_controll_group>:
+
+    canvas:
+        Rectangle:
+            source: 'images/bg_y.png'
+            size: self.size
+        BorderImage:
+            source: 'images/shadow32.png'
+            border: (30,30,36,36)
+            size:(self.width+56, self.height+56)
+            pos: (-28,-28)
+    BoxLayout:
+        size: root.size
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "КЛ. Воздух"
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "КЛ.Вода"
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "НП"
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "Тен Вода 3"
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "Тен Вода 6"
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "Насос Хімія"
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "Насос Воздух"
+            Label:
+                font_size: 24
+                color: [0/255, 64/255, 255/255, 1]
+                text: "НП"
+            Label:
+                font_size: 24
+                color: [255/255, 255/255, 255/255, 1]
+                text: "Таймер 3с"
+
+            Button:
+                background_color: [255/255, 0/255, 0/255, 1]
+                #size: [100, 30]
+                #size_hint: None, None
+                text: "RESET IO"
+                on_release: root.IO_reset()
+
+        BoxLayout:
+            orientation: 'vertical'
+            Switch:
+                id: sw1
+                on_active: root.io_swich(str(self.active) , "0")
+            Switch:
+                id: sw2
+                on_active: root.io_swich(str(self.active) , "1")
+            Switch:
+                id: sw3
+                on_active: root.io_swich(str(self.active) , "2")
+            Switch:
+                id: sw4
+                on_active: root.io_swich(str(self.active) , "3")
+            Switch:
+                id: sw5
+                on_active: root.io_swich(str(self.active) , "4")
+            Switch:
+                id: sw6
+                on_active: root.io_swich(str(self.active) , "5")
+            Switch:
+                id: sw7
+                on_active: root.io_swich(str(self.active) , "6")
+            Switch:
+                id: sw8
+                on_active: root.io_swich(str(self.active) , "7")
+            Switch:
+                id: sw9
+                on_active: root.timer_on(str(self.active),"99")
+            Label:
+                font_size: 24
+                color: [255/255, 0/255, 0/255, 1]
+                text: "E-STOP"

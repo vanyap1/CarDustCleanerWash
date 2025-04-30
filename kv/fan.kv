@@ -1,0 +1,39 @@
+#:import utils kivy.utils
+<Fan_Page>:
+
+    canvas:
+        Color:
+            #rgba: 1, 1, 1, 0.2  # red
+            rgb: utils.get_color_from_hex('#6a98ae')
+        Rectangle:
+
+            size: self.size
+
+
+        BorderImage:
+            source: 'images/shadow32.png'
+            border: (30,30,36,36)
+            size:(self.width+56, self.height+56)
+            pos: (-28,-28)
+    BoxLayout:
+        size: root.size
+        Label:
+            text: " "
+        Button:
+            text: ""
+            pos: 28, 28
+            size_hint: None, None
+            size: 534, 397
+            background_normal: 'images/Cheap2.png'
+            background_down: 'images/Cheap2.png'
+        #Button:
+        #    id: fan_lbl
+        #    text: ""
+        #    background_normal: "images/water.png"
+        #    background_normal: "images/shadow32.png"
+        #    size: (217, 149)
+        #    size_hint: (None, None)
+        #    pos_hint: {'center_x':0.8, 'center_y':0.5}
+
+        Label:
+            text: "  "

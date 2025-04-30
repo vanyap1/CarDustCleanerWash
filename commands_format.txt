@@ -1,0 +1,52 @@
+baud = 500000
+
+1w_scan:::r{013}
+i2c_scan:::r{013}
+
+
+adc:0:2:r{013}
+    ^ ^-------Gain
+	^---------CH 0/1/2/3
+Gain table:
+			'0 - 000 : FSR = ±6.144 V
+			'1 - 001 : FSR = ±4.096 V
+			'2 - 010 : FSR = ±2.048 V (default)
+			'3 - 011 : FSR = ±1.024 V
+			'4 - 100 : FSR = ±0.512 V
+			'5 - 101 : FSR = ±0.256 V
+			'6 - 110 : FSR = ±0.256 V
+			'7 - 111 : FSR = ±0.256 V	
+			
+
+tmp:1:1:r{013}
+    ^ ^-------ignored value
+    ^---------Number of thermometer 1/2
+
+val:0:1:s{013}
+    ^ ^-------validator EN 0/1
+    ^---------ignored value
+	
+out:b:01010101:s{013}
+    ^ ^-------digit value for - b(11111111),h(FF),d(255)
+	^---------digit format - b,h,d
+out:h:ff:s{013}
+out:d:255:s{013}	
+	
+bit:3:1:s{013}	
+    ^ ^-------digit value 0/1
+	^---------number bit of word
+
+bit:rst:0:s{013}
+     ^  ^------ignored value
+     ^---------Reset all outputs
+	 
+in:ff:h:r{013}	
+    ^ ^-------digit value for - b(11111111),h(FF),d(255)
+	^---------digit format - b,h,d	
+	
+devID:1w:get:2:xxxxxxxxxxxxxxxx:r  (devID:1w:get:1:_:r)
+    ^  ^  ^  ^ ^-data to MCU when "SET" operation(empty if "get" operation)
+    ^  ^  ^  ^---sensor chanel 1/2
+    ^  ^  ^------type of operation get/set 
+    ^  ^---------interface 1w/i2c
+	^------------Dev ID operations key		 

@@ -1,0 +1,104 @@
+<PopUpAirSetup>:
+    FloatLayout:
+        size: root.size
+        #orientation: 'horizontal'
+
+        Button:
+            pos: [root.size[0] - 200 , 1]
+            text: "Зберегти"
+            #size_hint: none, none
+            size: 100, 40
+            size_hint: None, None
+            on_press: root.close_popup()
+            on_release: root.parent.parent.parent.dismiss()
+
+        Button:
+            text: "Вийти"
+            #size_hint: none, none
+            size: 90, 40
+            pos: [root.size[0] - 91 , 1]
+            size_hint: None, None
+            on_press: root.close_popup()
+            on_release: root.parent.parent.parent.dismiss()
+
+        Button:
+            text: "Імпульс \n       -"
+            #size_hint: none, none
+            size: 75, 40
+            pos: [root.size[0] - 375 , 190]
+            size_hint: None, None
+            on_release: root.decr_duration()
+
+        Button:
+            text: "Імпульс \n       +"
+            #size_hint: none, none
+            size: 75, 40
+            pos: [root.size[0] -80 , 190]
+            size_hint: None, None
+            on_release: root.incr_duration()
+
+
+        Button:
+            text: "Цикл \n       -"
+            #size_hint: none, none
+            size: 75, 40
+            pos: [root.size[0] - 375 , 140]
+            size_hint: None, None
+            on_release: root.cycle_duration_decr()
+
+        Button:
+            text: "Цикл \n       +"
+            #size_hint: none, none
+            size: 75, 40
+            pos: [root.size[0] -80 , 140]
+            size_hint: None, None
+            on_release: root.cycle_duration_incr()
+
+
+
+
+        Image:
+            pos: [root.size[0] -290 , 165]
+            size_hint: None, None
+
+            size: 200, 64
+            source: 'images/duty_img.png'
+
+        Label:
+            font_size: 12
+            markup: True
+            text: "[color=000000]" + root.full + "с[/color]"
+            pos: [root.size[0] -260 , 125]
+            size_hint: None, None
+        Label:
+            font_size: 12
+            markup: True
+            text: "[color=000000]" + root.duty + "с[/color]"
+            pos: [root.size[0] -280 , 173]
+            size_hint: None, None
+
+        Label:
+            font_size: 16
+            markup: True
+            text: "[color=00ff00]" + root.text + "[/color]"
+            pos: [root.size[0] -240 , 107]
+            size_hint: None, None
+        Image:
+            pos: [root.size[0] -379 , 130]
+            size_hint: None, None
+            size: 378, 5
+            source: 'images/separator.png'
+
+        Switch:
+            id: sw1
+            pos: [root.size[0] -380 , 60]
+            size_hint: None, None
+            on_active: root.io_swich(str(self.active))
+
+        Label:
+            font_size: 16
+            markup: True
+            text: "[color=00ff00]" + "Ручна подача повітря" + "[/color]"
+            pos: [root.size[0] -230 , 60]
+            size_hint: None, None
+
